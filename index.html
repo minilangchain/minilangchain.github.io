@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GROW & GROW & GROW — Australian mobile app studio building therapeutics, language tools, and productivity applications." />
+  <title>GROW & GROW & GROW — Mobile App Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            surface: {
+              DEFAULT: '#0a0a0f',
+              raised: '#12121a',
+              card: '#16161f',
+            },
+            accent: {
+              DEFAULT: '#6ee7b7',
+              muted: '#34d399',
+              glow: 'rgba(110, 231, 183, 0.15)',
+            },
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .hero-gradient {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(110, 231, 183, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 0%, rgba(99, 102, 241, 0.08), transparent),
+        radial-gradient(ellipse 50% 30% at 0% 50%, rgba(52, 211, 153, 0.06), transparent);
+    }
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .card-shine {
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%);
+    }
+    html[data-modal-open="true"] {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-surface text-zinc-300 font-sans antialiased selection:bg-accent/30 selection:text-white">
+
+  <!-- Ambient background -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[300px] bg-indigo-500/5 blur-[100px] rounded-full"></div>
+  </div>
+
+  <div class="relative min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <header class="relative z-10 border-b border-white/5">
+      <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="#" class="font-display font-semibold text-white tracking-tight text-lg">
+          GROW <span class="text-accent">&</span> GROW <span class="text-accent">&</span> GROW
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="#apps" class="text-zinc-400 hover:text-white transition-colors hidden sm:inline">Apps</a>
+          <button type="button" data-open-modal="privacy" class="text-zinc-400 hover:text-white transition-colors">Privacy</button>
+          <button type="button" data-open-modal="support" class="text-zinc-400 hover:text-white transition-colors">Support</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+
+      <!-- Hero -->
+      <section class="relative hero-gradient grid-pattern overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 pt-20 pb-28 sm:pt-28 sm:pb-36">
+          <div class="max-w-3xl animate-fade-in">
+            <p class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-accent/90 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              Australian Mobile App Studio
+            </p>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight animate-slide-up">
+              Thoughtful apps for<br class="hidden sm:block" />
+              <span class="bg-gradient-to-r from-accent via-emerald-300 to-teal-400 bg-clip-text text-transparent">health, language &amp; focus</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-2xl animate-slide-up" style="animation-delay: 0.1s;">
+              We design and build mobile therapeutics, language learning tools, and productivity applications — crafted with care for people who want technology that genuinely helps.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+              <a href="#apps" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-surface font-semibold text-sm hover:bg-emerald-300 transition-colors shadow-lg shadow-accent/20">
+                View upcoming apps
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </a>
+              <button type="button" data-open-modal="support" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-zinc-300 font-medium text-sm hover:bg-white/5 hover:border-white/20 transition-colors">
+                Contact support
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Apps -->
+      <section id="apps" class="relative py-20 sm:py-28 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+            <div>
+              <h2 class="font-display text-2xl sm:text-3xl font-semibold text-white tracking-tight">Upcoming apps</h2>
+              <p class="mt-2 text-zinc-500 max-w-lg">Our first titles are in development. Check back soon for launches on the App Store and Google Play.</p>
+            </div>
+            <span class="inline-flex self-start items-center px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-zinc-400 border border-white/10">
+              Coming soon
+            </span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- App card: Therapeutics -->
+            <article class="group relative rounded-2xl border border-white/8 bg-surface-card overflow-hidden hover:border-accent/30 transition-all duration-300">
+              <div class="card-shine absolute inset-0 pointer-events-none"></div>
+              <div class="p-6 sm:p-8">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-600/10 border border-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <h3 class="font-display text-lg font-semibold text-white">Mobile Therapeutics</h3>
+                <p class="mt-2 text-sm text-zinc-500 leading-relaxed">Evidence-informed digital tools supporting wellbeing and therapeutic outcomes.</p>
+                <div class="mt-6 flex items-center gap-2 text-xs text-zinc-600">
+                  <span class="w-2 h-2 rounded-full bg-zinc-700"></span>
+                  In development
+                </div>
+              </div>
+            </article>
+
+            <!-- App card: Language -->
+            <article class="group relative rounded-2xl border border-white/8 bg-surface-card overflow-hidden hover:border-accent/30 transition-all duration-300">
+              <div class="card-shine absolute inset-0 pointer-events-none"></div>
+              <div class="p-6 sm:p-8">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-600/10 border border-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                </div>
+                <h3 class="font-display text-lg font-semibold text-white">Language Tools</h3>
+                <p class="mt-2 text-sm text-zinc-500 leading-relaxed">Intuitive apps for learning, practising, and mastering new languages.</p>
+                <div class="mt-6 flex items-center gap-2 text-xs text-zinc-600">
+                  <span class="w-2 h-2 rounded-full bg-zinc-700"></span>
+                  In development
+                </div>
+              </div>
+            </article>
+
+            <!-- App card: Productivity -->
+            <article class="group relative rounded-2xl border border-white/8 bg-surface-card overflow-hidden hover:border-accent/30 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div class="card-shine absolute inset-0 pointer-events-none"></div>
+              <div class="p-6 sm:p-8">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="font-display text-lg font-semibold text-white">Productivity</h3>
+                <p class="mt-2 text-sm text-zinc-500 leading-relaxed">Focused utilities that help you work smarter and stay on track.</p>
+                <div class="mt-6 flex items-center gap-2 text-xs text-zinc-600">
+                  <span class="w-2 h-2 rounded-full bg-zinc-700"></span>
+                  In development
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative border-t border-white/5 bg-surface-raised">
+      <div class="max-w-6xl mx-auto px-6 py-12 sm:py-16">
+        <div class="grid sm:grid-cols-2 gap-10 sm:gap-16">
+
+          <!-- Legal -->
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Legal entity</h2>
+            <p class="font-display text-white font-semibold text-lg leading-snug">
+              GROW &amp; GROW &amp; GROW PTY. LTD.
+            </p>
+            <p class="mt-3 text-sm text-zinc-400">
+              Australian proprietary company
+            </p>
+            <dl class="mt-6 space-y-3 text-sm">
+              <div class="flex flex-wrap gap-x-2">
+                <dt class="text-zinc-500">ABN</dt>
+                <dd class="text-zinc-300 font-medium tabular-nums">98 635 108 299</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Policies &amp; support</h2>
+            <ul class="space-y-3">
+              <li>
+                <button type="button" data-open-modal="privacy" class="group flex items-center gap-2 text-zinc-300 hover:text-accent transition-colors text-sm font-medium">
+                  <svg class="w-4 h-4 text-zinc-600 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button type="button" data-open-modal="support" class="group flex items-center gap-2 text-zinc-300 hover:text-accent transition-colors text-sm font-medium">
+                  <svg class="w-4 h-4 text-zinc-600 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                  Support
+                </button>
+              </li>
+            </ul>
+            <p class="mt-6 text-xs text-zinc-600 leading-relaxed">
+              For developer verification, account recovery, and app-related enquiries, please use our Support page.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-zinc-600">
+          <p>&copy; <span id="year"></span> GROW &amp; GROW &amp; GROW PTY. LTD. All rights reserved.</p>
+          <p>Made in Australia</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal backdrop -->
+  <div id="modal-backdrop" class="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true"></div>
+
+  <!-- Privacy Policy Modal -->
+  <dialog id="modal-privacy" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300" aria-labelledby="privacy-title" aria-modal="true" role="dialog">
+    <div class="relative w-full max-w-lg max-h-[85vh] overflow-hidden rounded-2xl border border-white/10 bg-surface-raised shadow-2xl shadow-black/50 transform scale-95 transition-transform duration-300">
+      <div class="sticky top-0 flex items-center justify-between px-6 py-4 border-b border-white/5 bg-surface-raised">
+        <h2 id="privacy-title" class="font-display font-semibold text-white">Privacy Policy</h2>
+        <button type="button" data-close-modal class="p-2 rounded-lg text-zinc-500 hover:text-white hover:bg-white/5 transition-colors" aria-label="Close">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto max-h-[calc(85vh-4rem)] text-sm text-zinc-400 leading-relaxed space-y-4">
+        <p class="text-zinc-300"><strong class="text-white">GROW &amp; GROW &amp; GROW PTY. LTD.</strong> (ABN 98 635 108 299) respects your privacy. This placeholder policy will be updated before our apps launch.</p>
+        <p><strong class="text-zinc-300">Information we collect.</strong> When you use our apps or contact support, we may collect information you provide (such as email address) and limited technical data necessary to operate and improve our services.</p>
+        <p><strong class="text-zinc-300">How we use information.</strong> We use collected information to provide, maintain, and improve our applications, respond to support requests, and comply with legal obligations.</p>
+        <p><strong class="text-zinc-300">Data sharing.</strong> We do not sell your personal information. We may share data with service providers who assist in operating our apps, subject to appropriate safeguards.</p>
+        <p><strong class="text-zinc-300">Your rights.</strong> Depending on your location, you may have rights to access, correct, or delete your personal information. Contact us via Support to exercise these rights.</p>
+        <p><strong class="text-zinc-300">Contact.</strong> For privacy enquiries, reach us through the Support section on this website.</p>
+        <p class="text-xs text-zinc-600 pt-2">Last updated: May 2026</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Support Modal -->
+  <dialog id="modal-support" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300" aria-labelledby="support-title" aria-modal="true" role="dialog">
+    <div class="relative w-full max-w-lg max-h-[85vh] overflow-hidden rounded-2xl border border-white/10 bg-surface-raised shadow-2xl shadow-black/50 transform scale-95 transition-transform duration-300">
+      <div class="sticky top-0 flex items-center justify-between px-6 py-4 border-b border-white/5 bg-surface-raised">
+        <h2 id="support-title" class="font-display font-semibold text-white">Support</h2>
+        <button type="button" data-close-modal class="p-2 rounded-lg text-zinc-500 hover:text-white hover:bg-white/5 transition-colors" aria-label="Close">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto max-h-[calc(85vh-4rem)] text-sm text-zinc-400 leading-relaxed space-y-5">
+        <p>We're here to help with our apps, your account, and general enquiries.</p>
+
+        <div class="rounded-xl border border-white/8 bg-surface-card p-5 space-y-3">
+          <h3 class="font-medium text-white text-sm">Contact us</h3>
+          <p>
+            Email:
+            <a href="mailto:support@growgrowgrow.com.au" class="text-accent hover:text-emerald-300 transition-colors font-medium">support@growgrowgrow.com.au</a>
+          </p>
+          <p class="text-xs text-zinc-600">Replace this address with your official support email before submitting to app stores.</p>
+        </div>
+
+        <div>
+          <h3 class="font-medium text-zinc-300 text-sm mb-2">Response times</h3>
+          <p>We aim to respond to support requests within 2–3 business days (Australian Eastern Time).</p>
+        </div>
+
+        <div>
+          <h3 class="font-medium text-zinc-300 text-sm mb-2">Company details</h3>
+          <p>
+            <strong class="text-white">GROW &amp; GROW &amp; GROW PTY. LTD.</strong><br />
+            ABN 98 635 108 299<br />
+            Australia
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const backdrop = document.getElementById('modal-backdrop');
+    const modals = {
+      privacy: document.getElementById('modal-privacy'),
+      support: document.getElementById('modal-support'),
+    };
+
+    let activeModal = null;
+
+    function openModal(name) {
+      const modal = modals[name];
+      if (!modal || activeModal) return;
+      activeModal = modal;
+      document.documentElement.setAttribute('data-modal-open', 'true');
+
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const panel = modal.querySelector('.transform');
+      if (panel) panel.classList.remove('scale-95');
+
+      const focusable = modal.querySelector('button[data-close-modal]');
+      if (focusable) focusable.focus();
+    }
+
+    function closeModal() {
+      if (!activeModal) return;
+      const modal = activeModal;
+      activeModal = null;
+      document.documentElement.removeAttribute('data-modal-open');
+
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const panel = modal.querySelector('.transform');
+      if (panel) panel.classList.add('scale-95');
+    }
+
+    document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+      btn.addEventListener('click', () => openModal(btn.dataset.openModal));
+    });
+
+    document.querySelectorAll('[data-close-modal]').forEach((btn) => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Hash deep-links for verification crawlers
+    if (location.hash === '#privacy') openModal('privacy');
+    if (location.hash === '#support') openModal('support');
+  </script>
+</body>
+</html>
